@@ -1103,7 +1103,8 @@ func (f *FlagSet) parseArgs(args []string, fn parseFunc) (err error) {
 				return nil
 			}
 			f.args = append(f.args, s)
-			continue
+			f.args = append(f.args, args...)
+			break
 		}
 
 		if s[1] == '-' {
